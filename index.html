@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Pedidos</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="data:image/png;base64=" alt="Logo Empresa">
+            <div>
+                <h1></h1>
+                <div class="empresa-info">
+                    <p></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="pedido-info">
+            <p><strong>CÓDIGO VENTA:</strong> <span id="noVenta"></span></p>
+            <p><strong>MODO VENTA:</strong> <span id="tipoVenta"></span></p>
+            <p><strong>TRANSPORTE:</strong> <span id="transporte"></span></p>
+            <p><strong>FECHA:</strong> <span id="fecha"></span></p>
+        </div>
+
+        <div class="datos-cliente">
+            <p><strong>NOMBRE:</strong> <span id="nombreEmpresa"></span></p>
+            <p><strong>NOMBRE CONTACTO:</strong> <span id="nombreCliente"></span></p>
+            <p><strong>DIRECCIÓN:</strong> <span id="direccion"></span></p>
+            <p><strong>RUTA:</strong> <span id="ruta"></span></p>
+            <p><strong>AREA:</strong> <span id="area"></span></p>
+            <p><strong>NIT DE CLIENTE:</strong> <span id="noNit"></span></p>
+            <p><strong>CÓDIGO CLIENTE:</strong> <span id="codigoCliente"></span></p>
+            <p><strong>TEL.:</strong> <span id="telefono"></span></p>
+            <p><strong>DATOS DEL PEDIDO:</strong></p>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>UB</th>
+                        <th>CANTIDAD</th>
+                        <th>CÓDIGO</th>
+                        <th>DESCRIPCIÓN</th>
+                        <th>PRECIO</th>
+                        <th>SUBTOTAL</th>
+                    </tr>
+                </thead>
+                <tbody id="detalleVenta">
+                </tbody>
+            </table>
+        </div>
+
+        <div class="totales">
+            <p><strong>TOTAL DE VENTA: <span id="totalVenta"></span></strong></p>
+        </div>
+
+        <div class="despedida">
+            <p>MUCHAS GRACIAS POR SU PEDIDO, SE DESPACHARÁ LO ANTES POSIBLE!</p>
+            <strong>DIOS LES BENDIGA!</strong>
+            <p><strong>ASESOR(A): <span id="nombreAsesor"></span></strong></p>
+            <p><strong>NUMERO CELULAR: <span id="telefonoAsesor"></span></strong></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
