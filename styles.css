@@ -46,7 +46,7 @@ body {
 }
 
 .pedido-info {
-    margin-top: 20px;
+    margin-top: 10px;
     text-align: left;
     font-size: 10px;
 }
@@ -56,13 +56,13 @@ body {
 }
 
 .datos-cliente {
-    margin-top: 20px;
+    margin-top: 10px;
     text-align: left;
     font-size: 10px;
 }
 
 .table-container {
-    margin-top: 20px;
+    margin-top: 10px;
     font-size: 10px;
     page-break-inside: auto;
 }
