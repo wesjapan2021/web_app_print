@@ -63,6 +63,7 @@ body {
 
 .table-container {
     margin-top: 10px;
+    text-align: auto;
     font-size: 10px;
     page-break-inside: auto;
 }
