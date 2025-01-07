@@ -70,7 +70,7 @@ function setValues() {
 // Función para generar PDF
 async function generatePDF() {
     const element = document.body;
-    const noVenta = document.getElementById("noVenta").textContent || 'sin_numero';
+    const noVenta = document.getElementById("noVenta").textContent || 'Sin_NoVenta';
     const fileName = `PEDIDO_${noVenta}.pdf`;
 
     const opt = {
