@@ -11,107 +11,27 @@ body {
     background-color: white;
 }
 
-.container {
-    width: 212.9mm;
-    min-height: 279.4mm;
-    padding: 10mm;
-    box-sizing: border-box;
-    background-color: white;
-}
+/* Hide empty elements when printing */
+@media print {
+    .container:empty, .header:empty, .empresa-info:empty, .pedido-info:empty, .datos-cliente:empty, .table-container:empty, .totales:empty, .despedida:empty {
+        display: none;
+    }
+    
+    /* Additional rules to ensure no blank pages */
+    .container {
+        page-break-inside: avoid;
+    }
+    
+    tr {
+        page-break-inside: avoid;
+        page-break-after: auto;
+    }
 
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10mm;
-}
+    table {
+        page-break-inside: auto;
+    }
 
-.header img {
-    max-width: 195mm;
-    height: auto;
-}
-
-.header h1 {
-    margin: 1px;
-    font-size: 24px;
-    text-align: right;
-    border: 1px solid white;
-}
-
-.empresa-info {
-    text-align: right;
-    font-size: 10px;
-    margin-top: 5px;
-    border: 1px solid white;
-}
-
-.pedido-info {
-    margin-top: 20px;
-    text-align: left;
-    font-size: 10px;
-}
-
-.pedido-info p {
-    margin: 5px 0;
-}
-
-.datos-cliente {
-    margin-top: 20px;
-    text-align: left;
-    font-size: 10px;
-}
-
-.table-container {
-    margin-top: 20px;
-    font-size: 10px;
-    page-break-inside: auto;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    page-break-inside: auto;
-}
-
-th, td {
-    border: 1px solid black;
-    padding: 3px;
-    page-break-inside: avoid;
-}
-
-tr {
-    page-break-inside: avoid;
-    page-break-after: auto;
-}
-
-th {
-    background-color: #9e9999;
-    font-weight: bold;
-}
-
-.totales {
-    text-align: right;
-    font-size: 10px;
-    margin-top: 20px;
-}
-
-.totales strong {
-    font-size: 10px;
-}
-
-#totalVenta, #nombreAsesor {
-    font-weight: bold;
-    color: black;
-    border: 1px solid white;
-}
-
-.despedida {
-    text-align: left;
-    margin-top: 20px;
-    font-size: 10px;
-}
-
-.despedida strong {
-    display: block;
-    margin-bottom: 5px;
+    th, td {
+        page-break-inside: avoid;
+    }
 }
