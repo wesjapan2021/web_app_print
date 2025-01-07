@@ -12,7 +12,7 @@ body {
 }
 
 .container {
-    width: 215.9mm;
+    width: 212.9mm;
     min-height: 279.4mm;
     padding: 10mm;
     box-sizing: border-box;
@@ -27,7 +27,7 @@ body {
 }
 
 .header img {
-    max-width: 200mm;
+    max-width: 195mm;
     height: auto;
 }
 
