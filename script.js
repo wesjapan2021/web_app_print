@@ -74,7 +74,7 @@ async function generatePDF() {
     const fileName = `PEDIDO_${noVenta}.pdf`;
 
     const opt = {
-        margin: 5,
+        margin: 4,
         filename: fileName,
         image: { type: 'jpeg', quality: 0.98 },
         html2canvas: { 
