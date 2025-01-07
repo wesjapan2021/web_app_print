@@ -70,16 +70,8 @@ function setValues() {
 // Función para generar PDF
 async function generatePDF() {
     const element = document.body;
-    const noVenta = document.getElementById("noVenta").textContent || 'Sin_NoVenta';
+    const noVenta = document.getElementById("noVenta").textContent || 'sin_numero';
     const fileName = `PEDIDO_${noVenta}.pdf`;
-
-    // Hide empty elements
-    const elements = document.querySelectorAll('.container, .header, .empresa-info, .pedido-info, .datos-cliente, .table-container, .totales, .despedida');
-    elements.forEach(el => {
-        if (!el.textContent.trim()) {
-            el.style.display = 'none';
-        }
-    });
 
     const opt = {
         margin: 4,
@@ -103,11 +95,6 @@ async function generatePDF() {
     } catch (error) {
         console.error('Error generando PDF:', error);
         alert('Hubo un error al generar el PDF. Por favor, intente nuevamente.');
-    } finally {
-        // Restore display property after generating PDF
-        elements.forEach(el => {
-            el.style.display = '';
-        });
     }
 }
 
