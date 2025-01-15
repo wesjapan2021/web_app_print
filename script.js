@@ -5,6 +5,24 @@ function sanitizeHTML(str) {
     return temp.innerHTML;
 }
 
+// Función para formatear fecha a dd/mm/yyyy
+function formatDate(dateStr) {
+    if (!dateStr) return '';
+    try {
+        const date = new Date(dateStr);
+        if (isNaN(date.getTime())) return dateStr; // Si no es una fecha válida, retorna el string original
+        
+        const day = date.getDate().toString().padStart(2, '0');
+        const month = (date.getMonth() + 1).toString().padStart(2, '0');
+        const year = date.getFullYear();
+        
+        return `${day}/${month}/${year}`;
+    } catch (e) {
+        console.error('Error formateando fecha:', e);
+        return dateStr;
+    }
+}
+
 // Función para obtener y decodificar parámetros de la URL
 function getUrlParameters() {
     const urlParams = new URLSearchParams(window.location.search);
@@ -13,7 +31,7 @@ function getUrlParameters() {
         noVenta: urlParams.get('noVenta') || '',
         tipoVenta: urlParams.get('tipoVenta') || '',
         transporte: urlParams.get('transporte') || '',
-        fecha: urlParams.get('fecha') || '',
+        fecha: formatDate(urlParams.get('fecha')) || '',
         nombreEmpresa: urlParams.get('nombreEmpresa') || '',
         nombreCliente: urlParams.get('nombreCliente') || '',
         direccion: urlParams.get('direccion') || '',
@@ -70,11 +88,11 @@ function setValues() {
 // Función para generar PDF
 async function generatePDF() {
     const element = document.body;
-    const noVenta = document.getElementById("noVenta").textContent || 'Pendiente_NoVenta';
+    const noVenta = document.getElementById("noVenta").textContent || 'sin_numero';
     const fileName = `PEDIDO_${noVenta}.pdf`;
 
     const opt = {
-        margin: 4,
+        margin: 10,
         filename: fileName,
         image: { type: 'jpeg', quality: 0.98 },
         html2canvas: { 
@@ -110,4 +128,4 @@ window.onload = async function() {
         console.error('Error en la inicialización:', error);
         alert('Ocurrió un error al inicializar la página. Por favor, recargue la página.');
     }
-};
+}; 
