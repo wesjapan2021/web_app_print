@@ -1,6 +1,44 @@
 @page {
     size: letter;
-    margin: 0;
+    margin: 0.5cm;
+}
+
+@media print {
+    body {
+        margin: 0;
+        padding: 0;
+        background: none;
+    }
+
+    .container {
+        width: 100%;
+        min-height: auto;
+        padding: 5mm;
+        margin: 0;
+        page-break-after: avoid;
+    }
+
+    .header img {
+        max-width: 160mm;
+    }
+
+    .header {
+        margin-bottom: 5mm;
+    }
+
+    .pedido-info,
+    .datos-cliente,
+    .table-container {
+        margin-top: 5px;
+    }
+
+    .totales {
+        margin-top: 10px;
+    }
+
+    .despedida {
+        margin-top: 10px;
+    }
 }
 
 body {
@@ -16,7 +54,6 @@ body {
 
 .container {
     width: 212.9mm;
-    min-height: 279.4mm;
     padding: 10mm;
     box-sizing: border-box;
     background-color: white;
