@@ -34,6 +34,9 @@
 
     .totales {
         margin-top: 10px;
+        font-size: 34px;
+        text-align: right;
+        border: 1px solid white;
     }
 
     .despedida {
