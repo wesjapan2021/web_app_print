@@ -137,15 +137,16 @@ th {
 
 .totales {
     text-align: right;
-    font-size: 10px;
+    font-size: 15px;
     margin-top: 20px;
 }
 
 .totales strong {
-    font-size: 10px;
+    font-size: 15px;
 }
 
 #totalVenta, #nombreAsesor {
+    font-size: 15px;
     font-weight: bold;
     color: black;
     border: 1px solid white;
