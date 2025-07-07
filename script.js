@@ -75,7 +75,10 @@ function setValues() {
     document.getElementById("noNit").textContent = params.noNit;
     document.getElementById("codigoCliente").textContent = params.codigoCliente;
     document.getElementById("telefono").textContent = params.telefono;
-    document.getElementById("totalVenta").textContent = params.totalVenta;
+    document.getElementById('totalVenta').textContent = new Intl.NumberFormat('es-GT', { 
+    style: 'currency', 
+    currency: 'GTQ'
+}).format(total);
     document.getElementById("nombreAsesor").textContent = params.nombreAsesor;
     document.getElementById("telefonoAsesor").textContent = params.telefonoAsesor;
 
